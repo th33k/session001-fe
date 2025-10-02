@@ -1,19 +1,12 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import * as routes from "../constants/routes";
 import { Lazy } from "../components/base";
-import { useSelector } from "react-redux";
-import {
-  isAuthorized as useAuthorized,
-  permission as usePermission,
-} from "store/auth/selector";
 import { AppLayout } from "layouts";
 import routeItems from "./routes";
 
 export const ClientRouter: React.FC = () => {
   // const isAuthorized = useSelector(useAuthorized);
   const isAuthorized = true;
-
-  const permission = useSelector(usePermission) || [];
 
   const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({
     children,

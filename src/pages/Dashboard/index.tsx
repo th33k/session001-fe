@@ -114,7 +114,7 @@ export default function Dashboard() {
       .call(d3.axisLeft(y).ticks(5))
       .attr("font-size", "13px")
       .attr("color", isDarkMode ? "#D1D5DB" : "#4B5563");
-  }, [statusCounts]);
+  }, [pieData]);
 
   // Pie Chart
   useEffect(() => {
@@ -160,7 +160,7 @@ export default function Dashboard() {
       .attr("font-weight", "600")
       .attr("text-anchor", "middle")
       .text((d) => d.data.count);
-  }, [statusCounts]);
+  }, [pieData, colorScale]);
 
   // Doughnut Chart
   useEffect(() => {
@@ -206,7 +206,7 @@ export default function Dashboard() {
       .attr("font-weight", "600")
       .attr("text-anchor", "middle")
       .text((d) => d.data.count);
-  }, [statusCounts]);
+  }, [pieData, colorScale]);
 
   // Line Chart
   useEffect(() => {
