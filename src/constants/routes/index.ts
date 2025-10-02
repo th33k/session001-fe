@@ -2,6 +2,11 @@ export const LOGIN = "/login";
 export const DASHBOARD = "/";
 export const DEFAULT = "/default";
 
+// QC Routes
+export const QC_DASHBOARD = "/qc";
+export const QC_HISTORY = "/qc/history";
+export const QC_STATISTICS = "/qc/statistics";
+
 //
 
 //

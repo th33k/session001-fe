@@ -7,22 +7,31 @@ import {
   FileText,
   Settings,
   LogOut,
+  ClipboardCheck,
 } from "lucide-react";
+import * as routes from "../../constants/routes";
 
 export const SideBar = () => {
   const location = useLocation();
   const pathname = location.pathname;
 
   const navItems = [
+    { icon: BarChart2, label: "Dashboard", href: routes.DASHBOARD },
+    { icon: ClipboardCheck, label: "Return QC", href: routes.QC_DASHBOARD },
     { icon: GitFork, label: "Complex Agents", href: "/complex-agents" },
     { icon: Rocket, label: "Deployments", href: "#" },
-    { icon: BarChart2, label: "Analytics & Cost", href: "#" },
     { icon: CheckSquare, label: "Compliance", href: "#" },
     { icon: FileText, label: "Templates", href: "#" },
     { icon: Settings, label: "Settings", href: "#" },
   ];
 
   const isActive = (href: string) => {
+    if (href === routes.DASHBOARD) {
+      return pathname === routes.DASHBOARD;
+    }
+    if (href === routes.QC_DASHBOARD) {
+      return pathname.startsWith(routes.QC_DASHBOARD);
+    }
     if (href === "/complex-agents") {
       return pathname === "/complex-agents";
     }
