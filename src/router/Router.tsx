@@ -8,6 +8,7 @@ import {
 } from "store/auth/selector";
 import { AppLayout } from "layouts";
 import routeItems from "./routes";
+import { InventoryLayout } from "../pages/Inventory";
 
 export const ClientRouter: React.FC = () => {
   // const isAuthorized = useSelector(useAuthorized);
@@ -56,6 +57,15 @@ export const ClientRouter: React.FC = () => {
               />
             );
           })}
+          
+          {/* Inventory Module Routes */}
+          <Route path={routes.INVENTORY} element={<InventoryLayout />}>
+            <Route index element={<Lazy page="Inventory/Dashboard" />} />
+            <Route path="items" element={<Lazy page="Inventory/Items" />} />
+            <Route path="categories" element={<Lazy page="Inventory/Categories" />} />
+            <Route path="reports" element={<Lazy page="Inventory/Reports" />} />
+            <Route path="activity" element={<Lazy page="Inventory/Activity" />} />
+          </Route>
         </Route>
         <Route path="*" element={<Lazy page="NotFound" />} />
       </Routes>

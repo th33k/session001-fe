@@ -2,6 +2,13 @@ export const LOGIN = "/login";
 export const DASHBOARD = "/";
 export const DEFAULT = "/default";
 
+// Inventory Routes
+export const INVENTORY = "/inventory";
+export const INVENTORY_ITEMS = "/inventory/items";
+export const INVENTORY_CATEGORIES = "/inventory/categories";
+export const INVENTORY_REPORTS = "/inventory/reports";
+export const INVENTORY_ACTIVITY = "/inventory/activity";
+
 //
 
 //
